@@ -1,0 +1,79 @@
+.header {
+    padding: 25px 20px;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0px;
+    z-index: 100;
+    background-color: #0091ff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.header__left {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.header__left:hover {
+    cursor: pointer;
+}
+
+.header__leftText {
+    margin-left: 20px;
+}
+
+.header__input {
+    display: flex;
+    align-items: center;
+    background-color: #eff2f5;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 999px;
+    margin-top: 0px;
+}
+
+.header__input > input {
+    border: none;
+    background-color: transparent;
+    outline-width: 0;
+}
+
+.header__middle {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    margin-left: 40px;
+}
+
+.header__option {
+    align-items: center;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: flex;
+    margin: 0 20px;
+}
+
+.header__option > .MuiSvgIcon-root {
+    margin-right: 10px;
+}
+
+.header__option:hover {
+    background-color: #00ffff;
+    border-radius: 999px;
+    font-weight: bold;
+    color: #0077ff;
+}
+
+.header__right {
+    display: flex;
+    align-items: center;
+}
+
+.header__right > h4 {
+    margin-left: 10px;
+}
+
+.header__right:hover {
+    cursor: pointer;
+}
