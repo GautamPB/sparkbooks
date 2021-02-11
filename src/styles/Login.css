@@ -1,0 +1,47 @@
+.login {
+    display: grid;
+    place-items: center;
+    height: 90vh;
+    background-color: black;
+}
+
+.login__image > img {
+    margin-top: -70px;
+    object-fit: contain;
+    height: 300px;
+    border-radius: 999px;
+}
+
+.login__text {
+    text-align: center;
+    margin-top: -150px;
+    color: white;
+}
+
+.login__text > h1 {
+    margin-bottom: 30px;
+    font-size: 40px;
+}
+
+.login__text > p {
+    font-size: 20px;
+}
+
+.login__button {
+    margin-top: -150px;
+    text-align: center;
+}
+
+.login__button > button {
+    padding: 10px 50px;
+    color: white;
+    background-color: black;
+    width: 200px;
+    font-size: 20px;
+}
+
+.login__button > button:hover {
+    font-weight: bold;
+    background-color: #0077ff;
+    color: black;
+}

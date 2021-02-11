@@ -77,3 +77,18 @@
 .header__right:hover {
     cursor: pointer;
 }
+
+.header__link {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+}
+
+.header__link > p {
+    margin-left: 10px;
+}
+
+.header__link > h4 {
+    margin-left: 10px;
+}
