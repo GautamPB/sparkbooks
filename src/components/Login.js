@@ -16,7 +16,7 @@ const Login = () => {
             </div>
 
             <div className="login__button">
-                <Button>Login</Button>
+                <Button className="login__button">Login</Button>
             </div>
         </div>
     )

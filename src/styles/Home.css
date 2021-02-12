@@ -1,0 +1,29 @@
+.home__button {
+    display: grid;
+    text-align: center;
+    width: 100%;
+    margin-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: solid 1px lightgray;
+}
+
+.home__buttonColumn > button {
+    text-align: center;
+}
+
+.home__buttonColumn > button {
+    padding: 10px 50px;
+    margin: 5px;
+    font-size: 15px;
+}
+
+.home__buttonColumn > button:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-weight: bold;
+    background-color: cyan;
+}
+
+.home__content {
+    margin-left: 20px;
+    margin-top: 20px;
+}
