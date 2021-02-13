@@ -1,0 +1,23 @@
+.singleBook {
+    margin: 50px;
+}
+
+.singleBook__image {
+    text-align: center;
+}
+
+.singleBook__image > img {
+    width: 300px;
+    object-fit: contain;
+}
+
+.singleBook__details > h1 {
+    margin-bottom: 20px;
+    font-size: 45px;
+}
+
+.singleBook__details > p {
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 20px;
+}

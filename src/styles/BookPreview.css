@@ -1,0 +1,41 @@
+.bookPreview {
+    margin-top: 20px;
+    display: flex;
+    padding-bottom: 20px;
+    border-bottom: solid 1px lightgray;
+}
+
+.book__image > img {
+    width: 180px;
+    object-fit: contain;
+}
+
+.book__image:hover {
+    cursor: pointer;
+}
+
+.book__details {
+    margin-left: 20px;
+}
+
+.book__details:hover {
+    cursor: pointer;
+}
+
+.book__rating {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.book__details > h2 {
+    margin-bottom: 10px;
+}
+
+.book__details > p {
+    margin-bottom: 10px;
+}
+
+.book__link {
+    text-decoration: none;
+    color: black;
+}

@@ -5,6 +5,7 @@ import Login from './components/Login'
 import About from './components/About'
 import Authors from './components/Authors'
 import Collection from './components/Collection'
+import SingleBook from './components/SingleBook'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 function App() {
@@ -30,6 +31,11 @@ function App() {
                     <Route path="/collection">
                         <Header />
                         <Collection />
+                    </Route>
+
+                    <Route path="/book/:data">
+                        <Header />
+                        <SingleBook />
                     </Route>
 
                     <Route path="/">
