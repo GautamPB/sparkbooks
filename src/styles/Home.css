@@ -1,16 +1,23 @@
+.home {
+    background-color: #fffacd;
+}
+
 .home__button {
     display: grid;
     text-align: center;
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-top: 30px;
+    padding-top: 30px;
     padding-bottom: 30px;
     border-bottom: solid 1px lightgray;
+    /* background-color: #d49645; */
+    /* background: url('https://www.octaneseating.com/blog/wp-content/uploads/2018/05/Wood-header.jpg'); */
 }
 
 .home__buttonColumn > button {
     text-align: center;
+    /* border: solid 2px black; */
 }
 
 .home__buttonColumn > button {

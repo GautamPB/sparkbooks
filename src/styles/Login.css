@@ -30,18 +30,31 @@
 .login__button {
     margin-top: -150px;
     text-align: center;
+    display: flex;
+}
+
+.login__logo > img {
+    width: 40px;
+    object-fit: contain;
 }
 
 .login__button > button {
     padding: 10px 50px;
     color: white;
     background-color: black;
-    width: 200px;
+    width: 100%;
     font-size: 20px;
+    text-align: center;
 }
 
 .login__button > button:hover {
     font-weight: bold;
-    background-color: #0077ff;
+    /* background-color: #0077ff; */
+    background-color: #fffacd;
     color: black;
+}
+
+.login__logo > img {
+    margin-right: 20px;
+    margin-top: 6px;
 }
