@@ -1,0 +1,51 @@
+.profile {
+    margin: 40px;
+    padding: 40px;
+    border: solid 2px black;
+    border-radius: 50px;
+}
+
+.profile > h1 {
+    margin-bottom: 30px;
+}
+
+.user__profile {
+    display: flex;
+}
+
+.profile__picture > img {
+    border-radius: 999px;
+    width: 250px;
+    object-fit: contain;
+}
+
+.profile__details {
+    margin-left: 40px;
+    padding: 40px;
+    border: solid 1px black;
+    width: 100%;
+    border-radius: 50px;
+}
+
+.profile__details > h2 {
+    margin-top: 30px;
+    padding-bottom: 10px;
+    border-bottom: solid 1px lightgray;
+}
+
+.profile__buttons {
+    margin-top: 50px;
+}
+
+.profile__buttons > button {
+    margin-right: 30px;
+    padding: 10px 50px;
+    margin: 5px;
+    font-size: 15px;
+}
+
+.profile__buttons > button:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-weight: bold;
+    background-color: cyan;
+}

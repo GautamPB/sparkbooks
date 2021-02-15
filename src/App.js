@@ -6,6 +6,7 @@ import About from './components/About'
 import Authors from './components/Authors'
 import Collection from './components/Collection'
 import SingleBook from './components/SingleBook'
+import Profile from './components/Profile'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 function App() {
@@ -36,6 +37,11 @@ function App() {
                     <Route path="/book/:data">
                         <Header />
                         <SingleBook />
+                    </Route>
+
+                    <Route path="/profile/:username">
+                        <Header />
+                        <Profile />
                     </Route>
 
                     <Route path="/">

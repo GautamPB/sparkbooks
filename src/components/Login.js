@@ -10,7 +10,7 @@ import { useHistory } from 'react-router-dom'
 const Login = () => {
     const history = useHistory()
 
-    const [user, dispatch] = useStateValue()
+    const [, dispatch] = useStateValue()
 
     const handleLogin = () => {
         //login logic

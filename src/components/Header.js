@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
 import '../styles/Header.css'
 import logo from '../pictures/logo.png'
 import { Avatar } from '@material-ui/core'
@@ -9,7 +10,15 @@ import LibraryBooksIcon from '@material-ui/icons/LibraryBooks'
 import { useStateValue } from './StateProvider'
 import { Link } from 'react-router-dom'
 const Header = () => {
-    const [{ user }, dispatch] = useStateValue()
+    const [{ user }] = useStateValue()
+
+    const history = useHistory()
+
+    useEffect(() => {
+        if (!user) {
+            history.push('/')
+        }
+    }, [])
 
     return (
         <div className="header">
@@ -54,7 +63,10 @@ const Header = () => {
             </div>
 
             <div className="header__right">
-                <Link to="/login" className="header__link">
+                <Link
+                    to={user ? '/profile/' + user.displayName : '/login'}
+                    className="header__link"
+                >
                     <Avatar src={user ? user.photoURL : ''} />
                     <h4>{user ? user.displayName : 'Login'}</h4>
                 </Link>
