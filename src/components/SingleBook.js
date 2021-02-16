@@ -1,9 +1,37 @@
+import { Button } from '@material-ui/core'
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 import '../styles/SingleBook.css'
+import { useStateValue } from './StateProvider'
+import { actionTypes } from './reducer'
 
 const SingleBook = () => {
     const { data } = useParams()
+
+    const history = useHistory()
+
+    const [{ user }] = useStateValue()
+    const [{ path }, dispatch] = useStateValue()
+    const [{ cart }, cartFunction] = useStateValue()
+
+    const handleBuy = () => {
+        if (!user) {
+            const path = window.location.pathname
+            dispatch({
+                type: actionTypes.SET_PATH,
+                path: path,
+            })
+            history.push('/login')
+        } else {
+            //add book to cart
+            cartFunction({
+                type: actionTypes.ADD_TO_CART,
+                item: {
+                    title: data,
+                },
+            })
+        }
+    }
 
     const rating = 5
 
@@ -29,6 +57,14 @@ const SingleBook = () => {
                 </div>
 
                 <h3>₹ 800.00</h3>
+            </div>
+
+            <div className="singleBook__buy">
+                <Button onClick={handleBuy}>
+                    {user
+                        ? 'Add to cart'
+                        : 'You must be logged in to add to cart. Click to Login.'}
+                </Button>
             </div>
         </div>
     )

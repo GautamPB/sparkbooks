@@ -7,12 +7,15 @@ import HomeIcon from '@material-ui/icons/Home'
 import InfoIcon from '@material-ui/icons/Info'
 import CreateIcon from '@material-ui/icons/Create'
 import LibraryBooksIcon from '@material-ui/icons/LibraryBooks'
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
 import { useStateValue } from './StateProvider'
 import { Link } from 'react-router-dom'
 const Header = () => {
     const [{ user }] = useStateValue()
 
     const history = useHistory()
+
+    const [{ cart }] = useStateValue()
 
     useEffect(() => {
         if (!user) {
@@ -63,6 +66,11 @@ const Header = () => {
             </div>
 
             <div className="header__right">
+                <div className="header__cart">
+                    <ShoppingCartIcon />
+                    <p>{cart?.length}</p>
+                </div>
+
                 <Link
                     to={user ? '/profile/' + user.displayName : '/login'}
                     className="header__link"

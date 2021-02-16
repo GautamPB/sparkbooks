@@ -45,6 +45,7 @@
     width: 100%;
     font-size: 20px;
     text-align: center;
+    border-radius: 999px;
 }
 
 .login__button > button:hover {

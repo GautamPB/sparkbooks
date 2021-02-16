@@ -21,3 +21,12 @@
     font-size: 25px;
     margin-bottom: 20px;
 }
+
+.singleBook__buy > button {
+    margin-top: 30px;
+    padding: 10px;
+    width: 100%;
+    background-color: #ff9900;
+    font-weight: bold;
+    font-size: 18px;
+}

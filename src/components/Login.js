@@ -11,6 +11,7 @@ const Login = () => {
     const history = useHistory()
 
     const [, dispatch] = useStateValue()
+    const [{ path }] = useStateValue()
 
     const handleLogin = () => {
         //login logic
@@ -21,7 +22,7 @@ const Login = () => {
                     type: actionTypes.SET_USER,
                     user: result.user,
                 })
-                history.push('/')
+                history.push(path)
             })
             .catch((error) => {
                 alert(error.message)

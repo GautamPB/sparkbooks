@@ -3,9 +3,12 @@ import { useStateValue } from './StateProvider'
 import { useHistory } from 'react-router-dom'
 import '../styles/Profile.css'
 import { Button } from '@material-ui/core'
+import { actionTypes } from './reducer'
 
 const Profile = () => {
     const [{ user }] = useStateValue()
+
+    const [{ path }, dispatch] = useStateValue()
 
     const history = useHistory()
 
@@ -15,7 +18,11 @@ const Profile = () => {
 
     useEffect(() => {
         if (!user) {
-            history.push('/')
+            dispatch({
+                type: actionTypes.SET_PATH,
+                path: '/',
+            })
+            history.push(path)
         }
     }, [])
 
