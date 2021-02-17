@@ -28,6 +28,11 @@ const SingleBook = () => {
                 type: actionTypes.ADD_TO_CART,
                 item: {
                     title: data,
+                    author: 'Book Author',
+                    price: 800,
+                    buyer: 'Customer 1',
+                    image:
+                        'https://www.wendymogel.com/images/uploads/books/Cover-coming-soon_orange-with-yellow.jpg',
                 },
             })
         }
@@ -40,7 +45,7 @@ const SingleBook = () => {
             <div className="singleBook__image">
                 <img
                     src="https://www.wendymogel.com/images/uploads/books/Cover-coming-soon_orange-with-yellow.jpg"
-                    alt=""
+                    alt="https://www.wendymogel.com/images/uploads/books/Cover-coming-soon_orange-with-yellow.jpg"
                 />
             </div>
 

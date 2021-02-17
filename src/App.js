@@ -7,6 +7,7 @@ import Authors from './components/Authors'
 import Collection from './components/Collection'
 import SingleBook from './components/SingleBook'
 import Profile from './components/Profile'
+import Cart from './components/Cart'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 function App() {
@@ -42,6 +43,11 @@ function App() {
                     <Route path="/profile/:username">
                         <Header />
                         <Profile />
+                    </Route>
+
+                    <Route path="/cart">
+                        <Header />
+                        <Cart />
                     </Route>
 
                     <Route path="/">

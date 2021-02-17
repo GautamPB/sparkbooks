@@ -66,10 +66,12 @@ const Header = () => {
             </div>
 
             <div className="header__right">
-                <div className="header__cart">
-                    <ShoppingCartIcon />
-                    <p>{cart?.length}</p>
-                </div>
+                <Link to="/cart" className="header__link">
+                    <div className="header__cart">
+                        <ShoppingCartIcon />
+                        <p>{cart?.length}</p>
+                    </div>
+                </Link>
 
                 <Link
                     to={user ? '/profile/' + user.displayName : '/login'}
