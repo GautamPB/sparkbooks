@@ -2,6 +2,7 @@
     padding: 25px 20px;
     display: flex;
     justify-content: space-between;
+    margin: auto;
     position: sticky;
     top: 0px;
     z-index: 100;
@@ -21,22 +22,6 @@
 
 .header__leftText {
     margin-left: 20px;
-}
-
-.header__input {
-    display: flex;
-    align-items: center;
-    background-color: #eff2f5;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 999px;
-    margin-top: 0px;
-}
-
-.header__input > input {
-    border: none;
-    background-color: transparent;
-    outline-width: 0;
 }
 
 .header__middle {

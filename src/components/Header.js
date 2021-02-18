@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import '../styles/Header.css'
 import logo from '../pictures/logo.png'
@@ -11,6 +11,8 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
 import { useStateValue } from './StateProvider'
 import { Link } from 'react-router-dom'
 const Header = () => {
+    const [search, setSearch] = useState()
+
     const [{ user }] = useStateValue()
 
     const history = useHistory()
@@ -25,15 +27,15 @@ const Header = () => {
 
     return (
         <div className="header">
-            <Link to="/" className="header__link">
-                <div className="header__left">
+            <div className="header__left">
+                <Link to="/" className="header__link">
                     <Avatar src={logo} />
                     <div className="header__leftText">
                         <h2>SparkBooks</h2>
                         <p>Read for Pleasure</p>
                     </div>
-                </div>
-            </Link>
+                </Link>
+            </div>
 
             <div className="header__middle">
                 <div className="header__option">

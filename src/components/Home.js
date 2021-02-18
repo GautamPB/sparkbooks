@@ -1,11 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button } from '@material-ui/core'
 import BookPreview from './BookPreview'
+import SearchIcon from '@material-ui/icons/Search'
+import { Link } from 'react-router-dom'
 import '../styles/Home.css'
 
 const Home = () => {
+    const [search, setSearch] = useState()
+
     return (
         <div className="home">
+            <div className="home__search">
+                <SearchIcon />
+                <input
+                    className="search__input"
+                    placeholder="Search for books or authors"
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                />
+                <Link to={'/search/' + search} className="home__link">
+                    <Button>Search</Button>
+                </Link>
+            </div>
+
             <div className="home__button">
                 <div className="home__buttonColumn">
                     <Button>Agatha Christie</Button>
