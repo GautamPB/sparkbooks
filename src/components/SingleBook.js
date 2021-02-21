@@ -1,18 +1,34 @@
 import { Button } from '@material-ui/core'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useHistory, useParams } from 'react-router-dom'
 import '../styles/SingleBook.css'
 import { useStateValue } from './StateProvider'
 import { actionTypes } from './reducer'
+import db from '../firebase'
 
 const SingleBook = () => {
     const { data } = useParams()
+
+    const [book, setBook] = useState([])
 
     const history = useHistory()
 
     const [{ user }] = useStateValue()
     const [{ path }, dispatch] = useStateValue()
     const [{ cart }, cartFunction] = useStateValue()
+
+    useEffect(() => {
+        db.collection('books')
+            .where('title', '==', data)
+            .onSnapshot((snapshot) =>
+                setBook(
+                    snapshot.docs.map((doc) => ({
+                        id: doc.id,
+                        data: doc.data(),
+                    }))
+                )
+            )
+    }, [])
 
     const handleBuy = () => {
         if (!user) {
@@ -27,41 +43,38 @@ const SingleBook = () => {
             cartFunction({
                 type: actionTypes.ADD_TO_CART,
                 item: {
-                    title: data,
-                    author: 'Book Author',
-                    price: 800,
-                    buyer: 'Customer 1',
-                    image:
-                        'https://www.wendymogel.com/images/uploads/books/Cover-coming-soon_orange-with-yellow.jpg',
+                    title: book.data.title,
+                    author: book.data.author,
+                    price: book.data.price,
+                    buyer: user.displayName,
+                    image: book.data.image,
                 },
             })
         }
     }
 
-    const rating = 5
-
     return (
         <div className="singleBook">
             <div className="singleBook__image">
                 <img
-                    src="https://www.wendymogel.com/images/uploads/books/Cover-coming-soon_orange-with-yellow.jpg"
+                    src={book.map((Book) => Book.data.image)}
                     alt="https://www.wendymogel.com/images/uploads/books/Cover-coming-soon_orange-with-yellow.jpg"
                 />
             </div>
 
             <div className="singleBook__details">
-                <h1>{data}</h1>
-                <p>Book Author</p>
+                <h1>{book.map((Book) => Book.data.title)}</h1>
+                <p>{book.map((Book) => Book.data.author)}</p>
 
                 <div className="book__rating">
-                    {Array(rating)
+                    {Array(book.map((Book) => Book.data.rating))
                         .fill()
                         .map((_) => (
                             <p>⭐</p>
                         ))}
                 </div>
 
-                <h3>₹ 800.00</h3>
+                <h3>₹ {book.map((Book) => Book.data.rating)}</h3>
             </div>
 
             <div className="singleBook__buy">

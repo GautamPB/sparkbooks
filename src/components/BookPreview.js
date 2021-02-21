@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/BookPreview.css'
 
-const BookPreview = ({ title, image, author, rating, price }) => {
+const BookPreview = ({ id, title, image, author, rating, price }) => {
     return (
         <div className="bookPreview">
             <div className="book__image">
