@@ -21,9 +21,9 @@ const Cart = () => {
                     {cart?.map((item) => (
                         <CartItem
                             title={item.title}
-                            image="https://www.wendymogel.com/images/uploads/books/Cover-coming-soon_orange-with-yellow.jpg"
-                            price={800}
-                            rating={5}
+                            image={item.image}
+                            price={item.price}
+                            rating={item.rating}
                         />
                     ))}
                 </div>

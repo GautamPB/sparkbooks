@@ -43,11 +43,12 @@ const SingleBook = () => {
             cartFunction({
                 type: actionTypes.ADD_TO_CART,
                 item: {
-                    title: book.data.title,
-                    author: book.data.author,
-                    price: book.data.price,
+                    title: book[0].data.title,
+                    author: book[0].data.author,
+                    price: book[0].data.price,
                     buyer: user.displayName,
-                    image: book.data.image,
+                    image: book[0].data.image,
+                    rating: book[0].data.rating,
                 },
             })
         }
@@ -74,7 +75,7 @@ const SingleBook = () => {
                         ))}
                 </div>
 
-                <h3>₹ {book.map((Book) => Book.data.rating)}</h3>
+                <h3>₹ {book.map((Book) => Book.data.price)}</h3>
             </div>
 
             <div className="singleBook__buy">
