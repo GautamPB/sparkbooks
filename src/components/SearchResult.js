@@ -22,14 +22,14 @@ const SearchResult = () => {
 
     return (
         <div className="searchResult">
-            <h1>
-                Search results for {searchValue}: {searchBooks.length}
-            </h1>
+            <h1>Search results for {searchValue}:</h1>
 
             {searchBooks.map((book) => (
                 <div className="books">
-                    {(book.data.title.toLowerCase() ||
-                        book.data.author.toLowerCase()) && (
+                    {(book.data.title.toLowerCase() ==
+                        searchValue.toLowerCase() ||
+                        book.data.author.toLowerCase() ==
+                            searchValue.toLowerCase()) && (
                         <BookPreview
                             id={book.data.id}
                             title={book.data.title}

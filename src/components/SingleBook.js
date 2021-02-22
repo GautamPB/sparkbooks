@@ -67,13 +67,7 @@ const SingleBook = () => {
                 <h1>{book.map((Book) => Book.data.title)}</h1>
                 <p>{book.map((Book) => Book.data.author)}</p>
 
-                <div className="book__rating">
-                    {Array(book.map((Book) => Book.data.rating))
-                        .fill()
-                        .map((_) => (
-                            <p>⭐</p>
-                        ))}
-                </div>
+                <div className="book__rating"></div>
 
                 <h3>₹ {book.map((Book) => Book.data.price)}</h3>
             </div>
