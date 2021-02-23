@@ -22,7 +22,7 @@ const SearchResult = () => {
 
     return (
         <div className="searchResult">
-            <h1>Search results for {searchValue}:</h1>
+            <h1>Search results for "{searchValue}":</h1>
 
             {searchBooks.map((book) => (
                 <div className="books">

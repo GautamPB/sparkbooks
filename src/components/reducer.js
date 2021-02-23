@@ -2,6 +2,11 @@ export const initialState = {
     cart: [],
     user: null,
     path: '/',
+    subtotal: 0,
+}
+
+export const getCartTotal = (cart) => {
+    cart?.reduce((amount, item) => item.price + amount, 0)
 }
 
 export const actionTypes = {
@@ -32,7 +37,18 @@ const reducer = (state, action) => {
             }
 
         case actionTypes.REMOVE_FROM_CART:
-            return { state }
+            //logic to remove from the cart.
+            let newCart = [...state.cart] //clone that basket
+
+            const index = state.cart.findIndex(
+                (cartItem) => cartItem.title === action.title
+            )
+
+            if (index >= 0) {
+                newCart.splice(index, 1)
+            }
+
+            return { ...state, cart: newCart }
 
         default:
             return state

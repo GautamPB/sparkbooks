@@ -43,6 +43,7 @@ const SingleBook = () => {
             cartFunction({
                 type: actionTypes.ADD_TO_CART,
                 item: {
+                    id: book[0].data.id,
                     title: book[0].data.title,
                     author: book[0].data.author,
                     price: book[0].data.price,

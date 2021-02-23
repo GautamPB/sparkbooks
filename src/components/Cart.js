@@ -2,6 +2,7 @@ import React from 'react'
 import '../styles/Cart.css'
 import CartItem from './CartItem'
 import { useStateValue } from './StateProvider'
+import Subtotal from './Subtotal'
 
 const Cart = () => {
     const [{ cart }] = useStateValue()
@@ -20,6 +21,7 @@ const Cart = () => {
                     <h1>Your Cart</h1>
                     {cart?.map((item) => (
                         <CartItem
+                            id={item.id}
                             title={item.title}
                             image={item.image}
                             price={item.price}
@@ -28,6 +30,10 @@ const Cart = () => {
                     ))}
                 </div>
             )}
+
+            <div className="cart__right">
+                <Subtotal />
+            </div>
         </div>
     )
 }

@@ -1,0 +1,12 @@
+.cart {
+    display: flex;
+}
+
+.cart__items {
+    padding: 20px;
+}
+
+.cart__right {
+    position: absolute;
+    right: 40px;
+}

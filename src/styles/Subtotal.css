@@ -1,0 +1,12 @@
+.subtotal {
+    margin-top: 20px;
+    border-radius: 10px;
+    border: solid black 1px;
+    background-color: #00f5ff;
+    padding: 20px 50px;
+}
+
+.total {
+    font-weight: bold;
+    font-size: 20px;
+}
