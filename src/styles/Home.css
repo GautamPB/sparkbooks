@@ -3,35 +3,6 @@
     min-height: 100vh;
 }
 
-.home__button {
-    display: grid;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    border-bottom: solid 1px lightgray;
-    /* background-color: #d49645; */
-    /* background: url('https://www.octaneseating.com/blog/wp-content/uploads/2018/05/Wood-header.jpg'); */
-}
-
-.home__buttonColumn > button {
-    text-align: center;
-}
-
-.home__buttonColumn > button {
-    padding: 10px 50px;
-    margin: 5px;
-    font-size: 15px;
-}
-
-.home__buttonColumn > button:hover {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    font-weight: bold;
-    background-color: cyan;
-}
-
 .home__content {
     margin-left: 80px;
     margin-top: 20px;
@@ -73,4 +44,9 @@
 .home__link {
     text-decoration: none;
     color: black;
+}
+
+.home__buttonColumn {
+    display: flex;
+    margin: auto;
 }

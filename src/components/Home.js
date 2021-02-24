@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Button } from '@material-ui/core'
 import BookPreview from './BookPreview'
 import SearchIcon from '@material-ui/icons/Search'
+import HomeButton from './HomeButton'
 import { Link } from 'react-router-dom'
 import db from '../firebase'
 import '../styles/Home.css'
@@ -39,15 +40,19 @@ const Home = () => {
 
             <div className="home__button">
                 <div className="home__buttonColumn">
-                    <Button>Agatha Christie</Button>
-                    <Button>Ken Follet</Button>
-                    <Button>Jeffery Archer</Button>
+                    <HomeButton author="Agatha Christie" />
+
+                    <HomeButton author="Ken Follet" />
+
+                    <HomeButton author="Jeffery Archer" />
                 </div>
 
-                <div className="home__buttonColumn">
-                    <Button>Enid Blyton</Button>
-                    <Button>Dan Brown</Button>
-                    <Button>Woodhouse</Button>
+                <div className="home__buttonColumn" to="/authors/enid blyton">
+                    <HomeButton author="Enid Blyton" />
+
+                    <HomeButton author="Dan Brown" />
+
+                    <HomeButton author="Woodhouse" />
                 </div>
             </div>
 

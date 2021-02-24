@@ -1,3 +1,4 @@
 books
 orders (book items and username and address)
 cart items (add to this after button is clicked so content is not lost on refresh)
+make each home button a component and pass in the text to render as props

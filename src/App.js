@@ -26,7 +26,7 @@ function App() {
                         <About />
                     </Route>
 
-                    <Route path="/authors">
+                    <Route path="/authors/:author">
                         <Header />
                         <Authors />
                     </Route>
