@@ -3,6 +3,7 @@ import '../styles/Cart.css'
 import CartItem from './CartItem'
 import { useStateValue } from './StateProvider'
 import Subtotal from './Subtotal'
+import CheckoutButton from './CheckoutButton'
 
 const Cart = () => {
     const [{ cart }] = useStateValue()
@@ -33,7 +34,14 @@ const Cart = () => {
             )}
 
             <div className="cart__right">
-                <Subtotal />
+                {cart.length ? (
+                    <>
+                        <Subtotal />
+                        <CheckoutButton />
+                    </>
+                ) : (
+                    ''
+                )}
             </div>
         </div>
     )

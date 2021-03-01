@@ -26,9 +26,9 @@ const SearchResult = () => {
 
             {searchBooks.map((book) => (
                 <div className="books">
-                    {(book.data.title.toLowerCase() ==
+                    {(book.data.title.toLowerCase() ===
                         searchValue.toLowerCase() ||
-                        book.data.author.toLowerCase() ==
+                        book.data.author.toLowerCase() ===
                             searchValue.toLowerCase()) && (
                         <BookPreview
                             id={book.data.id}

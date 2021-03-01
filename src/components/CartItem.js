@@ -5,14 +5,13 @@ import { useStateValue } from './StateProvider'
 import { actionTypes } from './reducer'
 
 const CartItem = ({ id, title, image, price, rating, author }) => {
-    const [{ cart }, dispatch] = useStateValue()
+    const [, dispatch] = useStateValue()
 
     const removeFromCart = () => {
         dispatch({
             type: actionTypes.REMOVE_FROM_CART,
             title: title,
         })
-        console.log(title)
     }
 
     return (
