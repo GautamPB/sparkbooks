@@ -10,7 +10,6 @@ import Profile from './components/Profile'
 import Cart from './components/Cart'
 import SearchResult from './components/SearchResult'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Liked from './components/Liked'
 
 function App() {
     return (
@@ -25,11 +24,6 @@ function App() {
                     <Route path="/about">
                         <Header />
                         <About />
-                    </Route>
-
-                    <Route path="/liked/:user">
-                        <Header />
-                        <Liked />
                     </Route>
 
                     <Route path="/authors/:author">

@@ -29,7 +29,7 @@ const Authors = () => {
                     <BookPreview
                         id={book.data.id}
                         title={book.data.title}
-                        author={book.data.title}
+                        author={book.data.author}
                         price={book.data.price}
                         rating={book.data.rating}
                         image={book.data.image}

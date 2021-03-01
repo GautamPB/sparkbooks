@@ -26,6 +26,7 @@ const Cart = () => {
                             image={item.image}
                             price={item.price}
                             rating={item.rating}
+                            author={item.author}
                         />
                     ))}
                 </div>

@@ -5,8 +5,6 @@ import logo from '../pictures/logo.png'
 import { Avatar } from '@material-ui/core'
 import HomeIcon from '@material-ui/icons/Home'
 import InfoIcon from '@material-ui/icons/Info'
-// import CreateIcon from '@material-ui/icons/Create'
-import FavoriteIcon from '@material-ui/icons/Favorite'
 import LibraryBooksIcon from '@material-ui/icons/LibraryBooks'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
 import { useStateValue } from './StateProvider'
@@ -50,13 +48,6 @@ const Header = () => {
                     <Link to="/about" className="header__link">
                         <InfoIcon />
                         <p>About</p>
-                    </Link>
-                </div>
-
-                <div className="header__option">
-                    <Link to="/authors" className="header__link">
-                        <FavoriteIcon />
-                        <p>Liked</p>
                     </Link>
                 </div>
 

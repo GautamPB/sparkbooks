@@ -4,7 +4,7 @@ import { Button } from '@material-ui/core'
 import { useStateValue } from './StateProvider'
 import { actionTypes } from './reducer'
 
-const CartItem = ({ id, title, image, price, rating }) => {
+const CartItem = ({ id, title, image, price, rating, author }) => {
     const [{ cart }, dispatch] = useStateValue()
 
     const removeFromCart = () => {
@@ -25,6 +25,7 @@ const CartItem = ({ id, title, image, price, rating }) => {
             </div>
             <div className="cartItem__details">
                 <h1>{title}</h1>
+                <p>{author}</p>
                 <div className="cartItem__rating">
                     {Array(rating)
                         .fill()

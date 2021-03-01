@@ -1,4 +1,9 @@
 .collection {
     /* background-color: #fffacd; */
     min-height: 100vh;
+    padding: 20px;
+}
+
+.books {
+    padding: 20px;
 }
