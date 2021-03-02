@@ -9,26 +9,28 @@ import LibraryBooksIcon from '@material-ui/icons/LibraryBooks'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
 import { useStateValue } from './StateProvider'
 import { Link } from 'react-router-dom'
-import db from '../firebase'
+
 const Header = () => {
-    const [cartItems, setCartItems] = useState([])
+    // const [cartItems, setCartItems] = useState([])
 
     const [{ user }] = useStateValue()
 
     const history = useHistory()
 
-    if (user) {
-        db.collection('cart')
-            .where('buyer', '==', user.displayName)
-            .onSnapshot((snapshot) =>
-                setCartItems(
-                    snapshot.docs.map((doc) => ({
-                        id: doc.id,
-                        data: doc.data(),
-                    }))
-                )
-            )
-    }
+    const [{ cart }] = useStateValue()
+
+    // if (user) {
+    //     db.collection('cart')
+    //         .where('buyer', '==', user.displayName)
+    //         .onSnapshot((snapshot) =>
+    //             setCartItems(
+    //                 snapshot.docs.map((doc) => ({
+    //                     id: doc.id,
+    //                     data: doc.data(),
+    //                 }))
+    //             )
+    //         )
+    // }
 
     useEffect(() => {
         if (!user) {
@@ -75,7 +77,7 @@ const Header = () => {
                 <Link to="/cart" className="header__link">
                     <div className="header__cart">
                         <ShoppingCartIcon />
-                        <p>{cartItems?.length}</p>
+                        <p>{cart?.length}</p>
                     </div>
                 </Link>
 

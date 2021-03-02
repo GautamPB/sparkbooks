@@ -24,7 +24,7 @@ const BookPreview = ({ id, title, image, author, rating, price }) => {
                         ))}
                 </div>
 
-                <h3>₹ {price}</h3>
+                <h3>₹ {price}.00</h3>
             </div>
         </div>
     )

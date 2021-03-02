@@ -1,14 +1,15 @@
 import React from 'react'
 import '../styles/CartItem.css'
 import { Button } from '@material-ui/core'
-import { useStateValue } from './StateProvider'
+import db from '../firebase'
 import { actionTypes } from './reducer'
+import { useStateValue } from './StateProvider'
 
 const CartItem = ({ id, title, image, price, rating, author }) => {
-    const [, dispatch] = useStateValue()
+    const [, cartFunction] = useStateValue()
 
     const removeFromCart = () => {
-        dispatch({
+        cartFunction({
             type: actionTypes.REMOVE_FROM_CART,
             title: title,
         })
@@ -32,7 +33,7 @@ const CartItem = ({ id, title, image, price, rating, author }) => {
                             <p>⭐</p>
                         ))}
                 </div>
-                <p>₹ {price}</p>
+                <p>₹ {price}.00</p>
 
                 <div className="cartItem__button">
                     <Button onClick={removeFromCart}>Remove from Cart</Button>
