@@ -15,7 +15,6 @@ const SingleBook = () => {
 
     const [{ user }] = useStateValue()
     const [, dispatch] = useStateValue()
-    const [, cartFunction] = useStateValue()
 
     useEffect(() => {
         db.collection('books')
@@ -40,21 +39,7 @@ const SingleBook = () => {
             history.push('/login')
         } else {
             //add book to cart and to cart collection.
-            cartFunction({
-                type: actionTypes.ADD_TO_CART,
-                item: {
-                    id: book[0].data.id,
-                    title: book[0].data.title,
-                    author: book[0].data.author,
-                    price: book[0].data.price,
-                    buyer: user.displayName,
-                    image: book[0].data.image,
-                    rating: book[0].data.rating,
-                },
-            })
-
             db.collection('cart').add({
-                id: book[0].data.id,
                 title: book[0].data.title,
                 author: book[0].data.author,
                 price: book[0].data.price,
