@@ -9,6 +9,7 @@ import SingleBook from './components/SingleBook'
 import Profile from './components/Profile'
 import Cart from './components/Cart'
 import SearchResult from './components/SearchResult'
+import Order from './components/Order'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 function App() {
@@ -54,6 +55,11 @@ function App() {
                     <Route path="/search/:searchValue">
                         <Header />
                         <SearchResult />
+                    </Route>
+
+                    <Route path="/orders/:username">
+                        <Header />
+                        <Order />
                     </Route>
 
                     <Route path="/">

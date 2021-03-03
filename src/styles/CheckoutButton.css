@@ -1,4 +1,4 @@
-.checkoutButton > button {
+.checkoutButton__link > button {
     /* padding: 10px 20px;
     margin-top: 20px;
     border-radius: 30px; */
@@ -7,4 +7,9 @@
     border: solid 1px black;
     padding: 10px 20px;
     background: #00deff;
+}
+
+.btn {
+    text-decoration: none;
+    color: black;
 }
