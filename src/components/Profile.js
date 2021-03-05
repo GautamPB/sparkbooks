@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom'
 import '../styles/Profile.css'
 import { Button } from '@material-ui/core'
 import { actionTypes } from './reducer'
+import { Link } from 'react-router-dom'
 
 const Profile = () => {
     const [{ user }] = useStateValue()
@@ -41,7 +42,9 @@ const Profile = () => {
 
                     <div className="profile__buttons">
                         <Button onClick={handleLogout}>Logout</Button>
-                        <Button>View Orders</Button>
+                        <Link to="/myorders" className="button__link">
+                            <Button>View Orders</Button>
+                        </Link>
                     </div>
                 </div>
             </div>

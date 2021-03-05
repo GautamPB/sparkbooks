@@ -52,15 +52,6 @@ const SingleBook = () => {
                     rating: book[0].data.rating,
                 },
             })
-
-            // db.collection('cart').add({
-            //     title: book[0].data.title,
-            //     author: book[0].data.author,
-            //     price: book[0].data.price,
-            //     buyer: user.displayName,
-            //     image: book[0].data.image,
-            //     rating: book[0].data.rating,
-            // })
         }
     }
 
