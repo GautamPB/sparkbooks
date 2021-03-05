@@ -4,9 +4,12 @@ import { useStateValue } from './StateProvider'
 import BookPreview from './BookPreview'
 import { Button } from '@material-ui/core'
 import db from '../firebase'
+import { useParams } from 'react-router-dom'
 import '../styles/UserOrder.css'
 
 const UserOrder = () => {
+    const { username } = useParams()
+
     const [{ user }] = useStateValue()
 
     const [orders, setOrders] = useState([])
@@ -34,7 +37,7 @@ const UserOrder = () => {
                     </>
                 ) : (
                     <>
-                        <h1>{user.displayName}'s Orders</h1>
+                        <h1>{username}'s Orders</h1>
                         {orders.map((order) => (
                             <BookPreview
                                 id={order.data.id}

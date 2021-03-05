@@ -9,7 +9,7 @@ import SingleBook from './components/SingleBook'
 import Profile from './components/Profile'
 import Cart from './components/Cart'
 import SearchResult from './components/SearchResult'
-import Order from './components/Order'
+import CheckoutPage from './components/CheckoutPage'
 import UserOrders from './components/UserOrder'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
@@ -58,12 +58,12 @@ function App() {
                         <SearchResult />
                     </Route>
 
-                    <Route path="/orders/:username">
+                    <Route path="/checkout">
                         <Header />
-                        <Order />
+                        <CheckoutPage />
                     </Route>
 
-                    <Route path="/myorders">
+                    <Route path="/orders/:username">
                         <Header />
                         <UserOrders />
                     </Route>

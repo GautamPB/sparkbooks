@@ -42,7 +42,10 @@ const Profile = () => {
 
                     <div className="profile__buttons">
                         <Button onClick={handleLogout}>Logout</Button>
-                        <Link to="/myorders" className="button__link">
+                        <Link
+                            to={'/orders/' + user.displayName}
+                            className="button__link"
+                        >
                             <Button>View Orders</Button>
                         </Link>
                     </div>
