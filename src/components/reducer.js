@@ -14,6 +14,7 @@ export const actionTypes = {
     SET_PATH: 'SET_PATH',
     ADD_TO_CART: 'ADD_TO_CART',
     REMOVE_FROM_CART: 'REMOVE_FROM_CART',
+    EMPTY_CART: 'EMPTY_CART',
 }
 
 const reducer = (state, action) => {
@@ -49,6 +50,12 @@ const reducer = (state, action) => {
             }
 
             return { ...state, cart: newCart }
+
+        case actionTypes.EMPTY_CART:
+            return {
+                ...state,
+                cart: [],
+            }
 
         default:
             return state
