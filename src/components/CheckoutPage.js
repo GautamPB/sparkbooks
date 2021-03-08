@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import BookPreview from './BookPreview'
 import '../styles/CheckoutPage.css'
 import { useStateValue } from './StateProvider'
-import { Button } from '@material-ui/core'
 import db from '../firebase'
 import { useHistory } from 'react-router-dom'
 import { actionTypes } from './reducer'
+import { Button } from '@material-ui/core'
 
 const Order = () => {
     const [phone, setPhone] = useState('')
@@ -18,15 +18,12 @@ const Order = () => {
 
     const history = useHistory()
 
-    let grandTotal = 0
-
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
         const error = document.querySelector('.hidden')
         if (!phone || !address) {
             error.classList.remove('hidden')
         } else {
             for (let i = 0; i < cart.length; i++) {
-                grandTotal += cart[i].price
                 db.collection('orders').add({
                     buyer: user.displayName,
                     title: cart[i].title,
@@ -69,6 +66,54 @@ const Order = () => {
             </div>
 
             <div className="checkout__details">
+                {/* <form className="contact-form" onSubmit={handleSubmit}>
+                    <input
+                        type="hidden"
+                        name="subject"
+                        value="Order Confirmation"
+                    />
+
+                    <input type="hidden" name="number" value={cart?.length} />
+
+                    <input type="hidden" name="text" value={books} />
+
+                    <label>Name</label>
+                    <input
+                        type="text"
+                        name="name"
+                        value={user ? user.displayName : ''}
+                        readOnly
+                    />
+
+                    <label>Email</label>
+                    <input
+                        type="email"
+                        name="email"
+                        value={user ? user.email : ''}
+                        readOnly
+                    />
+
+                    <label>Contact Info</label>
+                    <input
+                        name="phone"
+                        type="number"
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                    />
+
+                    <label>Address</label>
+                    <textarea
+                        name="address"
+                        type="text"
+                        value={address}
+                        onChange={(e) => setAddress(e.target.value)}
+                        rows={5}
+                        cols={20}
+                    />
+
+                    <input type="submit" value="Send" />
+                </form> */}
+
                 <h2>Name: {user ? user.displayName : ''}</h2>
                 <h2>Email : {user ? user.email : ''}</h2>
                 <div className="user__phone">
