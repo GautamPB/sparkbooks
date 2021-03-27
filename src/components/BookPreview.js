@@ -14,7 +14,9 @@ const BookPreview = ({ id, title, image, author, rating, price }) => {
                     <h2>{title}</h2>
                 </Link>
 
-                <p>{author}</p>
+                <Link to={'/authors/' + author} className="book__link">
+                    <p>{author}</p>
+                </Link>
 
                 <div className="book__rating">
                     {Array(rating)

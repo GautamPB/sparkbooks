@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import BookPreview from './BookPreview'
 import '../styles/CheckoutPage.css'
 import { useStateValue } from './StateProvider'
-import db from '../firebase'
 import { useHistory } from 'react-router-dom'
 import { actionTypes } from './reducer'
 import { Button } from '@material-ui/core'
@@ -23,35 +22,31 @@ const Order = () => {
         if (!phone || !address) {
             error.classList.remove('hidden')
         } else {
-            for (let i = 0; i < cart.length; i++) {
-                db.collection('orders').add({
-                    buyer: user.displayName,
-                    title: cart[i].title,
-                    author: cart[i].author,
-                    rating: cart[i].rating,
-                    price: cart[i].price,
-                    image: cart[i].image,
-                    phone: phone,
-                    address: address,
-                    email: user.email,
-                })
-            }
+            // for (let i = 0; i < cart.length; i++) {
+            //     db.collection('orders').add({
+            //         buyer: user.displayName,
+            //         title: cart[i].title,
+            //         author: cart[i].author,
+            //         rating: cart[i].rating,
+            //         price: cart[i].price,
+            //         image: cart[i].image,
+            //         phone: phone,
+            //         address: address,
+            //         email: user.email,
+            //     })
+            // }
 
-            dispatch({
-                type: actionTypes.EMPTY_CART,
-            })
+            // dispatch({
+            //     type: actionTypes.EMPTY_CART,
+            // })
 
-            history.push('/orders/' + user.displayName)
+            history.push('/payment')
         }
     }
 
     return (
         <div className="checkout">
             <h1>Checkout</h1>
-
-            <h1 className="hidden error">
-                Please fill out the form correctly!
-            </h1>
 
             <div className="checkout__items">
                 {cart.map((item) => (
@@ -65,55 +60,11 @@ const Order = () => {
                 ))}
             </div>
 
+            <h1 className="hidden error">
+                Please fill out the form correctly!
+            </h1>
+
             <div className="checkout__details">
-                {/* <form className="contact-form" onSubmit={handleSubmit}>
-                    <input
-                        type="hidden"
-                        name="subject"
-                        value="Order Confirmation"
-                    />
-
-                    <input type="hidden" name="number" value={cart?.length} />
-
-                    <input type="hidden" name="text" value={books} />
-
-                    <label>Name</label>
-                    <input
-                        type="text"
-                        name="name"
-                        value={user ? user.displayName : ''}
-                        readOnly
-                    />
-
-                    <label>Email</label>
-                    <input
-                        type="email"
-                        name="email"
-                        value={user ? user.email : ''}
-                        readOnly
-                    />
-
-                    <label>Contact Info</label>
-                    <input
-                        name="phone"
-                        type="number"
-                        value={phone}
-                        onChange={(e) => setPhone(e.target.value)}
-                    />
-
-                    <label>Address</label>
-                    <textarea
-                        name="address"
-                        type="text"
-                        value={address}
-                        onChange={(e) => setAddress(e.target.value)}
-                        rows={5}
-                        cols={20}
-                    />
-
-                    <input type="submit" value="Send" />
-                </form> */}
-
                 <h2>Name: {user ? user.displayName : ''}</h2>
                 <h2>Email : {user ? user.email : ''}</h2>
                 <div className="user__phone">
@@ -146,7 +97,7 @@ const Order = () => {
                     />
                 </div>
                 <div className="checkoutButton__link">
-                    <Button onClick={handleSubmit}>Place Order</Button>
+                    <Button onClick={handleSubmit}>Proceed to payment</Button>
                 </div>
             </div>
         </div>

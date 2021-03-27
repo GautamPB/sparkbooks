@@ -11,6 +11,7 @@ import Cart from './components/Cart'
 import SearchResult from './components/SearchResult'
 import CheckoutPage from './components/CheckoutPage'
 import UserOrders from './components/UserOrder'
+import Payment from './components/Payment'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 function App() {
@@ -66,6 +67,11 @@ function App() {
                     <Route path="/orders/:username">
                         <Header />
                         <UserOrders />
+                    </Route>
+
+                    <Route path="/payment">
+                        <Header />
+                        <Payment />
                     </Route>
 
                     <Route path="/">
