@@ -6,6 +6,7 @@ import { useStateValue } from './StateProvider'
 import { auth, provider } from '../firebase'
 import { actionTypes } from './reducer'
 import { useHistory } from 'react-router-dom'
+import Google from '../pictures/google_logo.png'
 
 const Login = () => {
     const history = useHistory()
@@ -43,7 +44,8 @@ const Login = () => {
                 <Button onClick={handleLogin}>
                     <div className="login__logo">
                         <img
-                            src="http://pngimg.com/uploads/google/google_PNG19635.png"
+                            // src="http://pngimg.com/uploads/google/google_PNG19635.png"
+                            src={Google}
                             alt=""
                         />
                     </div>

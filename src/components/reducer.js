@@ -2,12 +2,8 @@ export const initialState = {
     cart: [],
     user: null,
     path: '/',
-    phone: '',
-    address: '',
-}
-
-export const getCartTotal = (cart) => {
-    cart?.reduce((amount, item) => item.price + amount, 0)
+    userPhone: 0,
+    userAddress: '',
 }
 
 export const actionTypes = {
@@ -38,6 +34,18 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 cart: [...state.cart, action.item],
+            }
+
+        case actionTypes.SET_ADDRESS:
+            return {
+                ...state,
+                userAddress: action.address,
+            }
+
+        case actionTypes.SET_PHONE:
+            return {
+                ...state,
+                userPhone: action.phone,
             }
 
         case actionTypes.REMOVE_FROM_CART:

@@ -15,6 +15,10 @@ const Order = () => {
 
     const [{ user }] = useStateValue()
 
+    const [, addressFunction] = useStateValue()
+
+    const [, phoneFunction] = useStateValue()
+
     const history = useHistory()
 
     const handleSubmit = (e) => {
@@ -33,13 +37,22 @@ const Order = () => {
             //         phone: phone,
             //         address: address,
             //         email: user.email,
+            //          add payment route too.
             //     })
             // }
 
             // dispatch({
             //     type: actionTypes.EMPTY_CART,
             // })
+            addressFunction({
+                type: actionTypes.SET_ADDRESS,
+                address: address,
+            })
 
+            phoneFunction({
+                type: actionTypes.SET_PHONE,
+                phone: phone,
+            })
             history.push('/payment')
         }
     }
