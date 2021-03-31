@@ -16,6 +16,9 @@ export const actionTypes = {
     SET_ADDRESS: 'SET_ADDRESS',
 }
 
+export const getCartTotal = (cart) =>
+    cart?.reduce((amount, item) => item.price + amount, 0)
+
 const reducer = (state, action) => {
     switch (action.type) {
         case actionTypes.SET_USER:

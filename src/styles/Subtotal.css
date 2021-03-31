@@ -1,12 +1,21 @@
-.subtotal {
-    margin-top: 20px;
-    border-radius: 10px;
-    border: solid black 1px;
-    background-color: #00f5ff;
-    padding: 20px 50px;
+.subtotal__text {
+    display: flex;
+    font-size: 30px;
 }
 
-.total {
-    font-weight: bold;
+.subtotal__button > button {
+    margin-top: 20px;
+    border-radius: 20px;
+    border: solid 1px black;
+    padding: 10px 20px;
+    background: #00deff;
+    width: 100%;
     font-size: 20px;
+}
+
+.subtotal__button > button:hover {
+    font-weight: bold;
+    /* background: #1be9ff; */
+    background: #3dedff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

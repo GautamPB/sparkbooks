@@ -1,6 +1,7 @@
 import React from 'react'
 import '../styles/Payment.css'
 import { useStateValue } from './StateProvider'
+import Subtotal from './Subtotal'
 
 const Payment = () => {
     const [{ user }] = useStateValue()
@@ -13,7 +14,7 @@ const Payment = () => {
 
     return (
         <div className="payment">
-            <h1 className="payment__header">Payment Page</h1>
+            <h1 className="payment__header">Payment</h1>
 
             <div className="payment__body">
                 <div className="payment__left">
@@ -52,6 +53,21 @@ const Payment = () => {
                         <h2>{userPhone}</h2>
                     </div>
                 </div>
+            </div>
+
+            <div className="payment__modes">
+                <input type="radio" id="cash" name="payment" value="Cash" />
+                <label for="cash">Cash</label>
+
+                <br />
+                <br />
+
+                <input type="radio" id="upi" name="payment" value="UPI" />
+                <label for="cash">UPI</label>
+            </div>
+
+            <div className="payment__subtotal">
+                <Subtotal />
             </div>
         </div>
     )
