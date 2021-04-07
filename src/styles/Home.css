@@ -25,7 +25,12 @@
     margin-top: 20px;
 }
 
-.home__search > input {
+.home__search > form {
+    display: flex;
+    width: 100%;
+}
+
+.home__search > form > input {
     border: none;
     width: 100%;
     background-color: transparent;

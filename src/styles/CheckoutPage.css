@@ -30,6 +30,7 @@ h2 {
 .user__address {
     margin-top: 20px;
     display: flex;
+    flex-direction: column;
 }
 
 .user__address > textarea {
@@ -61,4 +62,24 @@ h2 {
 
 .hidden {
     display: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.address__line {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.address__line > input {
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    border-bottom: solid 1px black;
+    padding-bottom: 15px;
 }

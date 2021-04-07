@@ -25,7 +25,7 @@ const Subtotal = () => {
             />
 
             <div className="subtotal__button">
-                <Button>Pay</Button>
+                <Button>Place Order</Button>
             </div>
         </div>
     )

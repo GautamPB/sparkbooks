@@ -2,6 +2,7 @@ import React from 'react'
 import '../styles/Payment.css'
 import { useStateValue } from './StateProvider'
 import Subtotal from './Subtotal'
+import qrcode from '../pictures/payment_code.jpg'
 
 const Payment = () => {
     const [{ user }] = useStateValue()
@@ -11,6 +12,11 @@ const Payment = () => {
     const [{ userAddress }] = useStateValue()
 
     const [{ userPhone }] = useStateValue()
+
+    const handleChange = () => {
+        const paymentMethod = document.querySelector('#payment_method')
+        console.log(paymentMethod.value)
+    }
 
     return (
         <div className="payment">
@@ -44,7 +50,7 @@ const Payment = () => {
                         <textarea
                             readOnly
                             placeholder={userAddress}
-                            rows={6}
+                            rows={10}
                             columns={30}
                         />
                     </div>
@@ -56,18 +62,45 @@ const Payment = () => {
             </div>
 
             <div className="payment__modes">
-                <input type="radio" id="cash" name="payment" value="Cash" />
+                <input
+                    onChange={handleChange}
+                    type="radio"
+                    id="payment_method"
+                    name="payment"
+                    value="Cash"
+                />
                 <label for="cash">Cash</label>
 
                 <br />
                 <br />
 
-                <input type="radio" id="upi" name="payment" value="UPI" />
-                <label for="cash">UPI</label>
+                <input
+                    onChange={handleChange}
+                    type="radio"
+                    id="payment_method"
+                    name="payment"
+                    value="UPI"
+                />
+                <label for="upi">UPI</label>
             </div>
 
             <div className="payment__subtotal">
                 <Subtotal />
+            </div>
+
+            <div className="payment__code">
+                <img src={qrcode} alt="" />
+                <h4>Scan my QR code to pay</h4>
+
+                <h4>Paying: Gautam</h4>
+                <h4>sparkbooks735@gmail.com</h4>
+
+                <div className="payment__partners">
+                    <img
+                        src="https://i.pinimg.com/originals/d6/c0/2b/d6c02b967bd74dfcbb171cb84dade3f3.jpg"
+                        alt=""
+                    />
+                </div>
             </div>
         </div>
     )

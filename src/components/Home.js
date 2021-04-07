@@ -27,15 +27,17 @@ const Home = () => {
         <div className="home">
             <div className="home__search">
                 <SearchIcon />
-                <input
-                    className="search__input"
-                    placeholder="Search for books or authors"
-                    value={search}
-                    onChange={(e) => setSearch(e.target.value)}
-                />
-                <Link to={'/search/' + search} className="home__link">
-                    <Button>Search</Button>
-                </Link>
+                <form>
+                    <input
+                        className="search__input"
+                        placeholder="Search for books or authors"
+                        value={search}
+                        onChange={(e) => setSearch(e.target.value)}
+                    />
+                    <Link to={'/search/' + search} className="home__link">
+                        <Button type="submit">Search</Button>
+                    </Link>
+                </form>
             </div>
 
             <div className="home__button">

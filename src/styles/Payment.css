@@ -76,4 +76,37 @@
 
 .payment__modes {
     font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.payment__modes > label {
+    margin-right: 20px;
+    margin-left: 5px;
+}
+
+.payment__modes > input,
+label:hover {
+    cursor: pointer;
+}
+
+.payment__code {
+    display: grid;
+    place-items: center;
+    margin-top: 40px;
+}
+
+.payment__code > img {
+    width: 200px;
+    object-fit: contain;
+}
+
+.payment__code > h4 {
+    margin-top: 20px;
+}
+
+.payment__partners > img {
+    width: 100px;
+    object-fit: contain;
+    margin-top: 20px;
 }

@@ -6,7 +6,9 @@ const BookPreview = ({ id, title, image, author, rating, price }) => {
     return (
         <div className="bookPreview">
             <div className="book__image">
-                <img src={image} alt="" />
+                <Link to={'/book/' + title} className="image__link">
+                    <img src={image} alt="" />
+                </Link>
             </div>
 
             <div className="book__details">

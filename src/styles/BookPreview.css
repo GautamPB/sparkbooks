@@ -5,7 +5,7 @@
     border-bottom: solid 1px lightgray;
 }
 
-.book__image > img {
+.image__link > img {
     width: 180px;
     object-fit: contain;
 }
