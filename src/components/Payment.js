@@ -1,21 +1,44 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
 import '../styles/Payment.css'
 import { useStateValue } from './StateProvider'
 import Subtotal from './Subtotal'
 import qrcode from '../pictures/payment_code.jpg'
+import db from '../firebase'
+import { actionTypes } from './reducer'
 
 const Payment = () => {
+    const history = useHistory()
+
     const [{ user }] = useStateValue()
 
-    const [{ cart }] = useStateValue()
+    const [{ cart }, dispatch] = useStateValue()
 
     const [{ userAddress }] = useStateValue()
 
     const [{ userPhone }] = useStateValue()
 
     const handleChange = () => {
-        const paymentMethod = document.querySelector('#payment_method')
-        console.log(paymentMethod.value)
+        // const paymentMethod = document.querySelector('#payment_method')
+        // console.log(paymentMethod.value)
+        for (let i = 0; i < cart.length; i++) {
+            db.collection('orders').add({
+                buyer: user.displayName,
+                title: cart[i].title,
+                author: cart[i].author,
+                rating: cart[i].rating,
+                price: cart[i].price,
+                image: cart[i].image,
+                phone: userPhone,
+                address: userAddress,
+                email: user.email,
+                //  add payment route too.
+            })
+        }
+
+        dispatch({
+            type: actionTypes.EMPTY_CART,
+        })
     }
 
     return (
@@ -41,9 +64,12 @@ const Payment = () => {
                 </div>
 
                 <div className="payment__right">
-                    <h1>Deliver to: {user.displayName}</h1>
+                    <h1>
+                        Deliver to:{' '}
+                        {user ? user.displayName : history.push('/')}
+                    </h1>
 
-                    <h1>Email: {user.email}</h1>
+                    <h1>Email: {user ? user.email : history.push('/')}</h1>
 
                     <div className="payment__address">
                         <h1>Address</h1>

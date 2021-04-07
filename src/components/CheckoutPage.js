@@ -112,8 +112,8 @@ const Order = () => {
             </h1>
 
             <div className="checkout__details">
-                <h2>Name: {user ? user.displayName : ''}</h2>
-                <h2>Email : {user ? user.email : ''}</h2>
+                <h2>Name: {user ? user.displayName : history.push('/')}</h2>
+                <h2>Email : {user ? user.email : history.push('/')}</h2>
                 <div className="user__phone">
                     {user.phoneNumber ? (
                         <>
