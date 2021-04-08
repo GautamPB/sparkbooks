@@ -1,45 +1,20 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useHistory } from 'react-router-dom'
 import '../styles/Payment.css'
 import { useStateValue } from './StateProvider'
 import Subtotal from './Subtotal'
 import qrcode from '../pictures/payment_code.jpg'
-import db from '../firebase'
-import { actionTypes } from './reducer'
 
 const Payment = () => {
     const history = useHistory()
 
     const [{ user }] = useStateValue()
 
-    const [{ cart }, dispatch] = useStateValue()
+    const [{ cart }] = useStateValue()
 
     const [{ userAddress }] = useStateValue()
 
     const [{ userPhone }] = useStateValue()
-
-    const handleChange = () => {
-        // const paymentMethod = document.querySelector('#payment_method')
-        // console.log(paymentMethod.value)
-        for (let i = 0; i < cart.length; i++) {
-            db.collection('orders').add({
-                buyer: user.displayName,
-                title: cart[i].title,
-                author: cart[i].author,
-                rating: cart[i].rating,
-                price: cart[i].price,
-                image: cart[i].image,
-                phone: userPhone,
-                address: userAddress,
-                email: user.email,
-                //  add payment route too.
-            })
-        }
-
-        dispatch({
-            type: actionTypes.EMPTY_CART,
-        })
-    }
 
     return (
         <div className="payment">
@@ -89,7 +64,6 @@ const Payment = () => {
 
             <div className="payment__modes">
                 <input
-                    onChange={handleChange}
                     type="radio"
                     id="payment_method"
                     name="payment"
@@ -101,7 +75,6 @@ const Payment = () => {
                 <br />
 
                 <input
-                    onChange={handleChange}
                     type="radio"
                     id="payment_method"
                     name="payment"

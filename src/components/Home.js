@@ -13,14 +13,16 @@ const Home = () => {
     const [books, setBooks] = useState([])
 
     useEffect(() => {
-        db.collection('books').onSnapshot((snapshot) =>
-            setBooks(
-                snapshot.docs.map((doc) => ({
-                    id: doc.id,
-                    data: doc.data(),
-                }))
+        db.collection('books')
+            .limit(5)
+            .onSnapshot((snapshot) =>
+                setBooks(
+                    snapshot.docs.map((doc) => ({
+                        id: doc.id,
+                        data: doc.data(),
+                    }))
+                )
             )
-        )
     }, [])
 
     return (
@@ -30,7 +32,7 @@ const Home = () => {
                 <form>
                     <input
                         className="search__input"
-                        placeholder="Search for books or authors"
+                        placeholder="Search for books, authors or categories"
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
                     />

@@ -7,14 +7,20 @@ import { actionTypes } from './reducer'
 import { Link } from 'react-router-dom'
 
 const Profile = () => {
-    const [{ user }] = useStateValue()
+    const [{ user }, userFunction] = useStateValue()
 
     const [{ path }, dispatch] = useStateValue()
 
     const history = useHistory()
 
-    const handleLogout = () => {
-        window.location.reload() //refreshes the page, logging out user.
+    const handleLogout = (e) => {
+        e.preventDefault()
+        // window.location.reload() //refreshes the page, logging out user.
+        userFunction({
+            user: null,
+            type: actionTypes.LOGOUT_USER,
+        })
+        history.push('/')
     }
 
     useEffect(() => {
@@ -46,7 +52,12 @@ const Profile = () => {
                             to={user ? '/orders/' + user.displayName : '/'}
                             className="button__link"
                         >
-                            <Button>View Orders</Button>
+                            <Link
+                                to={user ? '/orders/' + user.displayName : '/'}
+                                className="button__link"
+                            >
+                                <Button>View Orders</Button>
+                            </Link>
                         </Link>
                     </div>
                 </div>

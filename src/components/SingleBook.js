@@ -50,6 +50,7 @@ const SingleBook = () => {
                     buyer: user.displayName,
                     image: book[0].data.image,
                     rating: book[0].data.rating,
+                    category: book[0].data.category,
                 },
             })
         }

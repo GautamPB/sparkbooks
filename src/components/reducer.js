@@ -8,6 +8,7 @@ export const initialState = {
 
 export const actionTypes = {
     SET_USER: 'SET_USER',
+    LOGOUT_USER: 'LOGOUT_USER',
     SET_PATH: 'SET_PATH',
     ADD_TO_CART: 'ADD_TO_CART',
     REMOVE_FROM_CART: 'REMOVE_FROM_CART',
@@ -22,6 +23,12 @@ export const getCartTotal = (cart) =>
 const reducer = (state, action) => {
     switch (action.type) {
         case actionTypes.SET_USER:
+            return {
+                ...state,
+                user: action.user,
+            }
+
+        case actionTypes.LOGOUT_USER:
             return {
                 ...state,
                 user: action.user,
