@@ -1,7 +1,7 @@
 export const initialState = {
     cart: [],
     user: null,
-    path: '/',
+    path: '/home',
     userPhone: 0,
     userAddress: '',
 }

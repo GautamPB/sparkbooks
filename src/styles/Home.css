@@ -3,6 +3,11 @@
     min-height: 100vh;
 }
 
+.home__button {
+    align-items: center;
+    justify-content: center;
+}
+
 .home__content {
     margin-left: 80px;
     margin-top: 20px;

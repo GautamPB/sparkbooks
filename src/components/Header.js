@@ -19,22 +19,9 @@ const Header = () => {
 
     const [{ cart }] = useStateValue()
 
-    // if (user) {
-    //     db.collection('cart')
-    //         .where('buyer', '==', user.displayName)
-    //         .onSnapshot((snapshot) =>
-    //             setCartItems(
-    //                 snapshot.docs.map((doc) => ({
-    //                     id: doc.id,
-    //                     data: doc.data(),
-    //                 }))
-    //             )
-    //         )
-    // }
-
     useEffect(() => {
         if (!user) {
-            history.push('/')
+            history.push('/home')
         }
     }, [])
 
@@ -52,7 +39,7 @@ const Header = () => {
 
             <div className="header__middle">
                 <div className="header__option">
-                    <Link to="/" className="header__link">
+                    <Link to="/home" className="header__link">
                         <HomeIcon />
                         <p>Home</p>
                     </Link>

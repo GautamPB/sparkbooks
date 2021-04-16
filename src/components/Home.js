@@ -32,7 +32,7 @@ const Home = () => {
                 <form>
                     <input
                         className="search__input"
-                        placeholder="Search for books, authors or categories"
+                        placeholder="Search for books and authors"
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
                     />
@@ -44,19 +44,27 @@ const Home = () => {
 
             <div className="home__button">
                 <div className="home__buttonColumn">
-                    <HomeButton author="Agatha Christie" />
+                    <HomeButton category="crime" />
 
-                    <HomeButton author="Ken Follet" />
+                    <HomeButton category="mystery" />
 
-                    <HomeButton author="Jeffery Archer" />
+                    <HomeButton category="novel" />
                 </div>
 
-                <div className="home__buttonColumn" to="/authors/enid blyton">
-                    <HomeButton author="Enid Blyton" />
+                <div className="home__buttonColumn">
+                    <HomeButton category="romance" />
 
-                    <HomeButton author="Dan Brown" />
+                    <HomeButton category="children" />
 
-                    <HomeButton author="Woodhouse" />
+                    <HomeButton category="comedy" />
+                </div>
+
+                <div className="home__buttonColumn">
+                    <HomeButton category="academics" />
+
+                    <HomeButton category="comics" />
+
+                    <HomeButton category="fantasy" />
                 </div>
             </div>
 

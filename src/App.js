@@ -1,9 +1,11 @@
 import './App.css'
+import LandingPage from './components/LandingPage'
 import Header from './components/Header'
 import HomePage from './components/Home'
 import Login from './components/Login'
 import About from './components/About'
-import Authors from './components/Authors'
+import Category from './components/Category'
+import Author from './components/Authors'
 import Collection from './components/Collection'
 import SingleBook from './components/SingleBook'
 import Profile from './components/Profile'
@@ -29,9 +31,14 @@ function App() {
                         <About />
                     </Route>
 
+                    <Route path="/category/:category">
+                        <Header />
+                        <Category />
+                    </Route>
+
                     <Route path="/authors/:author">
                         <Header />
-                        <Authors />
+                        <Author />
                     </Route>
 
                     <Route path="/collection">
@@ -74,9 +81,13 @@ function App() {
                         <Payment />
                     </Route>
 
-                    <Route path="/">
+                    <Route path="/home">
                         <Header />
                         <HomePage />
+                    </Route>
+
+                    <Route path="/">
+                        <LandingPage />
                     </Route>
                 </Switch>
             </div>

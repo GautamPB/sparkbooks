@@ -5,12 +5,12 @@ import BookPreview from './BookPreview'
 import db from '../firebase'
 
 const Authors = () => {
-    const { author } = useParams()
+    const { category } = useParams()
 
     const [books, setBooks] = useState([])
 
     db.collection('books')
-        .where('author', '==', author)
+        .where('category', '==', category)
         .onSnapshot((snapshot) =>
             setBooks(
                 snapshot.docs.map((doc) => ({
@@ -22,7 +22,7 @@ const Authors = () => {
 
     return (
         <div className="authors">
-            <h1>Books by : {author.toUpperCase()}</h1>
+            <h1>Category : {category.toUpperCase()}</h1>
 
             <div className="books">
                 {books.map((book) => (
